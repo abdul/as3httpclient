@@ -1,0 +1,15 @@
+<html>
+<head>
+<title>JavaScript MXML Component Test</title>	
+<!-- swfobject -->
+<script type="text/javascript" src="swfobject.js"></script>	
+</head>
+<body>
+	<div id="flashcontent" class="playerContent" >You don't have Flash Player 9.</div>
+	<script type="text/javascript">
+		var swfObj = new SWFObject ("as3httpclienttest.swf","as3httpclienttest.swf", "500", "300", "9", "#C0D4DD", true);
+		swfObj.write("flashcontent");
+	</script>
+
+</body>
+</html>

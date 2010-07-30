@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="asdoc" default="main">
+	<property file="./asdocGenerate.properties" />
+	<target name="main" depends="clean,compile" description="full build of asdocs"/>
+	<target name="clean">
+		<delete dir="${outputfolder}" failOnError="false" includeEmptyDirs="true"/>
+		<mkdir dir="${outputfolder}"/>
+	</target>
+	<target name="compile" depends="clean">
+		<exec executable="${Flex201SDK}/bin/asdoc.exe" failonerror="true">
+			<arg line='-doc-sources ${domainextensions}'/>
+			<arg line='-main-title "${title}"' />
+			<arg line='-window-title "${title}"' />
+			<arg line='-output ${outputfolder}' />
+		</exec>
+	</target>
+</project>

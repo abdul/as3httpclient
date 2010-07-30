@@ -1,0 +1,522 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../../../style.css" type="text/css" media="screen">
+<link rel="stylesheet" href="../../../print.css" type="text/css" media="print">
+<meta content="SocketHTTPRequest,code.google.as3httpclient.SocketHTTPRequest,contentType,requestHeaders,data,url,method,port,baseURL,extendedURL,createInstanceFromURLRequest,constructRequest,__constructHeader,__constructData" name="keywords">
+<title>code.google.as3httpclient.SocketHTTPRequest</title>
+</head>
+<body>
+<script type="text/javascript" language="javascript" src="../../../asdoc.js"></script><script type="text/javascript" language="javascript" src="../../../cookies.js"></script><script type="text/javascript" language="javascript">
+<!--
+				asdocTitle = 'SocketHTTPRequest - AS3HTTPClient documentation';
+				var baseRef = '../../../';
+				window.onload = configPage;
+			--></script>
+<table style="display:none" id="titleTable" cellspacing="0" cellpadding="0" class="titleTable">
+<tr>
+<td align="left" class="titleTableTitle">AS3HTTPClient documentation</td><td align="right" class="titleTableTopNav"><a onclick="loadClassListFrame('../../../all-classes.html')" href="../../../package-summary.html">All&nbsp;Packages</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../../all-classes.html')" href="../../../class-summary.html">All&nbsp;Classes</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../../index-list.html')" href="../../../all-index-A.html">Index</a>&nbsp;|&nbsp;<a href="../../../index.html?code/google/as3httpclient/SocketHTTPRequest.html&amp;code/google/as3httpclient/class-list.html" id="framesLink1">Frames</a><a onclick="parent.location=document.location" href="" style="display:none" id="noFramesLink1">No&nbsp;Frames</a></td><td rowspan="3" align="right" class="titleTableLogo"><img alt="Adobe Logo" title="Adobe Logo" class="logoImage" src="../../../images/logo.jpg"></td>
+</tr>
+<tr class="titleTableRow2">
+<td align="left" id="subTitle" class="titleTableSubTitle">Class&nbsp;SocketHTTPRequest</td><td align="right" id="subNav" class="titleTableSubNav"><a href="#propertySummary">Properties</a>&nbsp;| <a href="#methodSummary">Methods</a></td>
+</tr>
+<tr class="titleTableRow3">
+<td colspan="2">&nbsp;</td>
+</tr>
+</table>
+<script type="text/javascript" language="javascript">
+<!--
+if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Class SocketHTTPRequest"); titleBar_setSubNav(false,true,false,false,false,false,true,false,false,false,false,false,false,false);}
+--></script>
+<div class="MainContent">
+<table cellspacing="0" cellpadding="0" class="classHeaderTable">
+<tr>
+<td class="classHeaderTableLabel">Package</td><td><a onclick="javascript:loadClassListFrame('class-list.html')" href="package-detail.html">code.google.as3httpclient</a></td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Class</td><td class="classSignature">public class SocketHTTPRequest</td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Subclasses</td><td><a href="../as3httpclient/SocketHTTPFileRequest.html">SocketHTTPFileRequest</a></td>
+</tr>
+</table>
+<p></p>
+  This class is used by the SocketURLLoader class. The URLRequest class could not be extended,
+  which is the reason that this class exists. It will extract more information from the url
+  then the normal URLRequest.
+  
+  <p></p>
+<p>
+<span class="classHeaderTableLabel">See also</span>
+</p>
+<div class="seeAlso">
+<a href="SocketURLLoader.html" target="">SocketURLLoader</a>
+<br>
+<a href="http://livedocs.adobe.com/flex/2/langref/flash/net/URLRequest.html" target="mm_external">flash.net.URLRequest</a>
+</div>
+<br>
+<hr>
+</div>
+<a name="propertySummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Properties</div>
+<table id="summaryTableProperty" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Property</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#baseURL">baseURL</a> : String<div class="summaryTableDescription">[read-only]
+   Gives the baseURL from the url, this could be seen as the server name.<br />
+   <br />
+   <code>http://www.mywebsite.com:8080/test/?id=100</code> will result in <code>www.mywebsite.com</code>
+   as base url.</div>
+</td><td class="summaryTableOwnerCol">SocketHTTPRequest</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#contentType">contentType</a> : String<div class="summaryTableDescription">
+   The contentType of the request, the default value is ContentType.APPLICATION_X_WWW_FORM_URLENCODED
+   
+   </div>
+</td><td class="summaryTableOwnerCol">SocketHTTPRequest</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#data">data</a> : Object<div class="summaryTableDescription">
+   The given data will be handled differently depending on a few variables.<br />
+   <br />
+   If method is set to POST and contentType is set to ContentType.APPLICATION_X_WWW_FORM_URLENCODED:
+   If data is ByteArray it will be written as is to the request, else the toString() method will 
+   be called and the result will be written to the request.<br />
+   <br />
+   If method is set to POST and contentType is set to ContentType.MULTIPART_FORM_DATA:<br />
+   If data is URLVariables it will create a part for each entry.</div>
+</td><td class="summaryTableOwnerCol">SocketHTTPRequest</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#extendedURL">extendedURL</a> : String<div class="summaryTableDescription">[read-only]
+   Gives the extendedURL from the url, this is all extra information besides the
+   server and port<br />
+   <br />
+   <code>http://www.mywebsite.com:8080/test/?id=100</code> will result in <code>/test/?id=100</code>
+   as extended url.</div>
+</td><td class="summaryTableOwnerCol">SocketHTTPRequest</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#method">method</a> : String<div class="summaryTableDescription">
+   The method of the request.</div>
+</td><td class="summaryTableOwnerCol">SocketHTTPRequest</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#port">port</a> : int<div class="summaryTableDescription">[read-only]
+   Gives the port from the URL
+   </div>
+</td><td class="summaryTableOwnerCol">SocketHTTPRequest</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#requestHeaders">requestHeaders</a> : Array<div class="summaryTableDescription">
+   The request headers to be included in the request.</div>
+</td><td class="summaryTableOwnerCol">SocketHTTPRequest</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#url">url</a> : String<div class="summaryTableDescription">
+   The url of the request.</div>
+</td><td class="summaryTableOwnerCol">SocketHTTPRequest</td>
+</tr>
+</table>
+</div>
+<a name="methodSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Methods</div>
+<table id="summaryTableMethod" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#SocketHTTPRequest()">SocketHTTPRequest</a>(url_str:String = null)</div>
+<div class="summaryTableDescription">
+   Creates a new SocketHTTPRequest.<br />
+   Defeaults the method to SocketURLRequestMethod.GET and contentType to 
+   ContentType.APPLICATION_X_WWW_FORM_URLENCODED.<br />
+   <br />
+   Note that the SocketHTTPRequest currently only supports urls that start 
+   with http://.<br />
+   </div>
+</td><td class="summaryTableOwnerCol">SocketHTTPRequest</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#constructRequest()">constructRequest</a>():ByteArray</div>
+<div class="summaryTableDescription">
+   This method will construct the request and return it as a ByteArray.</div>
+</td><td class="summaryTableOwnerCol">SocketHTTPRequest</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#createInstanceFromURLRequest()">createInstanceFromURLRequest</a>(request:URLRequest):<a href="../as3httpclient/SocketHTTPRequest.html">SocketHTTPRequest</a>
+</div>
+<div class="summaryTableDescription">[static]
+   Will create an instance of SocketHTTPRequest from the given URLRequest.</div>
+</td><td class="summaryTableOwnerCol">SocketHTTPRequest</td>
+</tr>
+</table>
+</div>
+<a name="protectedMethodSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Protected Methods</div>
+<table id="summaryTableProtectedMethod" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#__constructData()">__constructData</a>(boundary_str:String):ByteArray</div>
+<div class="summaryTableDescription">
+   This method constructs the data that is send with the request.</div>
+</td><td class="summaryTableOwnerCol">SocketHTTPRequest</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#__constructHeader()">__constructHeader</a>(contentLength_num:Number, boundary_str:String):ByteArray</div>
+<div class="summaryTableDescription">
+   This method constructs the header of the request.</div>
+</td><td class="summaryTableOwnerCol">SocketHTTPRequest</td>
+</tr>
+</table>
+</div>
+<script type="text/javascript" language="javascript">
+<!--
+showHideInherited();
+--></script>
+<div class="MainContent">
+<a name="propertyDetail"></a>
+<div class="detailSectionHeader">Property detail</div>
+<a name="baseURL"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">baseURL</td><td class="detailHeaderType">property</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>baseURL:String</code>&nbsp;&nbsp;[read-only]<p>
+   Gives the baseURL from the url, this could be seen as the server name.<br />
+   <br />
+   <code>http://www.mywebsite.com:8080/test/?id=100</code> will result in <code>www.mywebsite.com</code>
+   as base url.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get baseURL():String</code>
+<br>
+</div>
+<a name="contentType"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">contentType</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public var contentType:String</code><p>
+   The contentType of the request, the default value is ContentType.APPLICATION_X_WWW_FORM_URLENCODED
+   
+   </p><p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="ContentType.html" target="">ContentType</a>
+</div>
+</div>
+<a name="data"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">data</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public var data:Object</code><p>
+   The given data will be handled differently depending on a few variables.<br />
+   <br />
+   If method is set to POST and contentType is set to ContentType.APPLICATION_X_WWW_FORM_URLENCODED:
+   If data is ByteArray it will be written as is to the request, else the toString() method will 
+   be called and the result will be written to the request.<br />
+   <br />
+   If method is set to POST and contentType is set to ContentType.MULTIPART_FORM_DATA:<br />
+   If data is URLVariables it will create a part for each entry. This part will look 
+   like this:<br />
+   <br />
+   "--{separator}"<br />
+   Content-Disposition: form-data; name="{urlVariableName}"<br />
+   {content}<br />
+   <br />
+   {separator} will be replaced by the separator.<br />
+   {urlVariableName} will be replaced by the name of the the URLVariables entry.<br />
+   {content} will be replaced by the data. If data is ByteArray it will be written directly, 
+       else the toString() method will be called and the result will be written.<br />
+   </p><br>
+<span class="label">Throws</span>
+<br>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code></code> &mdash; Is thrown when method is POST,ContentType.MULTIPART_FORM_DATA and the data
+          is NOT of type URLVariables.
+   </td>
+</tr>
+</table>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="http://livedocs.adobe.com/flex/2/langref/flash/utils/ByteArray.html" target="mm_external">flash.utils.ByteArray</a>
+<br>
+<a href="http://livedocs.adobe.com/flex/2/langref/flash/net/URLVariables.html" target="mm_external">flash.net.URLVariables</a>
+</div>
+</div>
+<a name="extendedURL"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">extendedURL</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>extendedURL:String</code>&nbsp;&nbsp;[read-only]<p>
+   Gives the extendedURL from the url, this is all extra information besides the
+   server and port<br />
+   <br />
+   <code>http://www.mywebsite.com:8080/test/?id=100</code> will result in <code>/test/?id=100</code>
+   as extended url.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get extendedURL():String</code>
+<br>
+</div>
+<a name="method"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">method</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>method:String</code>&nbsp;&nbsp;[read-write]<p>
+   The method of the request. The default method is GET, valid values are 
+   SocketURLRequestMethod.DELETE, SocketURLRequestMethod.GET, SocketURLRequestMethod.HEAD, SocketURLRequestMethod.OPTIONS,
+   URLRequestMethod.POST and SocketURLRequestMethod.TRACE
+   
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get method():String</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set method(value:String):void</code>
+<br>
+<br>
+<span class="label">Throws</span>
+<br>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code></code> &mdash; is the given method is not valid.
+   </td>
+</tr>
+</table>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../as3httpclient/SocketHTTPRequest.html#code.google.as3httpclient/SocketURLRequestMethod" target="">code.google.as3httpclient.SocketURLRequestMethod</a>
+</div>
+</div>
+<a name="port"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">port</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>port:int</code>&nbsp;&nbsp;[read-only]<p>
+   Gives the port from the URL
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get port():int</code>
+<br>
+</div>
+<a name="requestHeaders"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">requestHeaders</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public var requestHeaders:Array</code><p>
+   The request headers to be included in the request. Note that the Content-Length header 
+   is automatically set is the content has length. The Content-Type header is also 
+   included by default.
+   </p></div>
+<a name="url"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">url</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>url:String</code>&nbsp;&nbsp;[read-write]<p>
+   The url of the request. Note that currently only url's which start with http://
+   can be parsed.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get url():String</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set url(value:String):void</code>
+<br>
+</div>
+<a name="constructorDetail"></a>
+<div class="detailSectionHeader">Constructor detail</div>
+<a name="SocketHTTPRequest()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">SocketHTTPRequest</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">constructor</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function SocketHTTPRequest(url_str:String = null)</code><p>
+   Creates a new SocketHTTPRequest.<br />
+   Defeaults the method to SocketURLRequestMethod.GET and contentType to 
+   ContentType.APPLICATION_X_WWW_FORM_URLENCODED.<br />
+   <br />
+   Note that the SocketHTTPRequest currently only supports urls that start 
+   with http://.<br />
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">url_str</span>:String</code> (default = <code>null</code>)<code></code> &mdash; If given it will be passed to the url setter.
+   </td>
+</tr>
+</table>
+</div>
+<a name="methodDetail"></a>
+<div class="detailSectionHeader">Method detail</div>
+<a name="__constructData()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">__constructData</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected function __constructData(boundary_str:String):ByteArray</code><p>
+   This method constructs the data that is send with the request. More information on 
+   how data is handled can be found at the data property.
+   
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">boundary_str</span>:String</code></td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>ByteArray</code></td>
+</tr>
+</table>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../as3httpclient/SocketHTTPRequest.html#data" target="">data</a>
+</div>
+</div>
+<a name="__constructHeader()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">__constructHeader</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>protected function __constructHeader(contentLength_num:Number, boundary_str:String):ByteArray</code><p>
+   This method constructs the header of the request.
+   
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">contentLength_num</span>:Number</code> &mdash; The length of the content.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">boundary_str</span>:String</code> &mdash; The boundary which is only used if contentType is ContentType.MULTIPART_FORM_DATA
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>ByteArray</code></td>
+</tr>
+</table>
+</div>
+<a name="constructRequest()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">constructRequest</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function constructRequest():ByteArray</code><p>
+   This method will construct the request and return it as a ByteArray. This 
+   ByteArray can be used directly to make the request on the socket.
+   
+   </p><p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>ByteArray</code></td>
+</tr>
+</table>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="http://livedocs.adobe.com/flex/2/langref/flash/utils/ByteArray.html" target="mm_external">flash.utils.ByteArray</a>
+</div>
+</div>
+<a name="createInstanceFromURLRequest()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">createInstanceFromURLRequest</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function createInstanceFromURLRequest(request:URLRequest):<a href="../as3httpclient/SocketHTTPRequest.html">SocketHTTPRequest</a></code><p>
+   Will create an instance of SocketHTTPRequest from the given URLRequest.
+   
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">request</span>:URLRequest</code> &mdash; The request used to create the SocketHTTPRequest instance.
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code><a href="../as3httpclient/SocketHTTPRequest.html">SocketHTTPRequest</a></code></td>
+</tr>
+</table>
+</div>
+<br>
+<br>
+<hr>
+<br>
+<p></p>
+<center class="copyright"> 
+</center>
+</div>
+</body>
+</html>
+<!-- -->

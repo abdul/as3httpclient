@@ -1,0 +1,82 @@
+<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml" creationComplete="onAppCreationComplete ()">
+	<mx:Script>
+		<![CDATA[
+			import code.google.as3httpclient.*;
+			import flash.net.*;
+			import flash.events.*;
+
+			private var socketLoader:SocketURLLoader;
+
+			private function onAppCreationComplete ():void
+			{
+				socketLoader = new SocketURLLoader ();
+				socketLoader.addEventListener (HTTPStatusEvent.HTTP_STATUS, handleHTTPStatus);
+				socketLoader.addEventListener (ProgressEvent.PROGRESS, handleProgress);
+				socketLoader.addEventListener (Event.COMPLETE, handleComplete);
+				socketLoader.addEventListener (Event.OPEN, handleOpen);
+
+			}
+
+			private function loadURL ():void
+			{
+				var request:SocketHTTPRequest = new SocketHTTPRequest ();
+				request.url = urlText.text;//"http://www.abdulqabiz.com/blog/index.xml";
+				request.method = methods.selectedItem.toString ();
+				if (input.text.length > 0)
+				{
+					request.data = input.text;
+				}
+			
+				socketLoader.load (request);
+			}
+
+			private function logMessage (message:String):void
+			{
+				console.text += message + "\n";
+			}
+
+			private function handleHTTPStatus (event:HTTPStatusEvent):void
+			{
+				logMessage ("HTTPStatus: " + event.status);
+				var header:URLRequestHeader;
+				for each (header in socketLoader.responseHeaders)
+				{
+					logMessage (header.name + " : " + header.value);
+				}
+			}
+
+			private function handleProgress (event:ProgressEvent):void
+			{
+				logMessage ("Progress: " + event.bytesLoaded + "/" + event.bytesTotal);
+			}
+
+			private function handleComplete (event:Event):void
+			{
+				logMessage ("Complete: " + socketLoader.data);
+			}
+
+			private function handleOpen (event:Event):void
+			{
+				logMessage ("Connected...");
+
+			}
+		]]>
+	</mx:Script>
+	<mx:HBox width="100%">
+		<mx:TextInput id="urlText" text="http://www.abdulqabiz.com/blog/index.xml"/>
+		<mx:ComboBox id="methods" selectedIndex="0">
+			<mx:Array>
+				<mx:String>GET</mx:String>
+				<mx:String>PUT</mx:String>
+				<mx:String>HEAD</mx:String>
+				<mx:String>POST</mx:String>
+				<mx:String>OPTIONS</mx:String>
+				<mx:String>TRACE</mx:String>
+				<mx:String>DELETE</mx:String>
+			</mx:Array>
+		</mx:ComboBox>
+		<mx:Button label="loadURL" click="loadURL ()"/>
+	</mx:HBox>	
+	<mx:TextArea id="input" width="100%" height="100%"/>
+	<mx:TextArea id="console" width="100%" height="100%" />
+</mx:Application>
